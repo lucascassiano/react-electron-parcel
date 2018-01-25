@@ -1,0 +1,51 @@
+{
+    "name": "react_parcel_babel_generator",
+    "version": "0.1.0",
+    "description": "React+Babel+Parcel",
+    "main": "./public/index.js",
+    "scripts": {
+        "web-dev": "parcel -p 3000 ./src/index.html",
+        "compile": "parcel watch --out-dir ./public/ --public-url ./ ./src/index.html",
+        "build": "parcel build ./src/index.html --no-minify",
+        "electron-dev": "electron ./public/electron.js --enable-logging",
+        "start": "concurrently \"npm run compile \" \"npm run electron-dev\" ",
+        "export": "npm run build && build --em.main=public/electron.js --win --ia32 --mac -c electron-builder.yml"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lucascassiano/react_parcel_babel_generator.git"
+    },
+    "keywords": [
+        "React",
+        "Babel",
+        "Parcel"
+    ],
+    "author": "lucascassiano",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lucascassiano/react_parcel_babel_generator/issues"
+    },
+    "homepage": "https://github.com/lucascassiano/react_parcel_babel_generator#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-inline-react-svg": "^0.5.2",
+        "babel-plugin-transform-assets": "^0.2.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2018": "^1.0.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-react-app": "^3.1.1",
+        "concurrently": "^3.5.1",
+        "electron": "^1.7.11",
+        "electron-builder": "^19.55.2",
+        "electron-packager": "^10.1.1",
+        "electron-reload": "^1.2.2",
+        "nodemon": "^1.14.11",
+        "parcel-bundler": "^1.5.0"
+    },
+    "dependencies": {
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0"
+    }
+}
