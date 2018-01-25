@@ -1,0 +1,15 @@
+{
+    "name": "react-parcel-electron-generator",
+    "version": "0.1.0",
+    "description": "React, bundled with Parcel and packed by electron",
+    "files": [
+        "src",
+        "public"
+    ],
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "dependencies": {
+        "yeoman-generator": "^1.1.1"
+    }
+}
