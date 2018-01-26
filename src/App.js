@@ -5,7 +5,6 @@ import reactLogo from './logo.svg';
 import pipeline from "./assets/pipeline.svg";
 
 import './App.css';
-const a = process.env.KEY;
 
 class App extends Component {
 
@@ -16,7 +15,7 @@ class App extends Component {
       <br/>
       <img className="App-logo-box" src={box}/>
         <header className="App-header">  
-          <h1 className="App-title">Welcome to React + Parcel {a} </h1>
+          <h1 className="App-title">Welcome to React + Parcel</h1>
         </header>
 
         <p className="App-intro">
