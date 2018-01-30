@@ -1,5 +1,6 @@
 # react_parcel_babel_generator
-yeoman generator for web app with React (UI) + Babel(Compiler) + Parcel(Bundler)
+boilerplate and yeoman generator for web app with React (UI) + Babel(Compiler) + Parcel(Bundler)
+![Image of example](https://github.com/lucascassiano/react_parcel_babel_generator/raw/master/docs/screenshot.png)
 
 # #THE GENERATOR IS STILL UNDER DEVELOPMENT#
 For now you can use this project as a boilerplate. If you want to contribute, the /generator/ folder has the initial state of the yeoman generator. Check more at http://yeoman.io/authoring/
