@@ -18,3 +18,15 @@ cd {repository directory}
 ```
 npm install && npm start
 ```
+
+## Web development
+```
+npm run web-dev
+```
+open a browser at http://localhost:3000 (port is fixed in 3000)
+
+## Desktop app building
+```
+npm run electron-build
+```
+check the folder /dist/

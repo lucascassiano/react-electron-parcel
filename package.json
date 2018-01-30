@@ -2,13 +2,26 @@
     "name": "react_parcel_babel_generator",
     "version": "0.1.0",
     "description": "React+Babel+Parcel",
-    "main": "./public/index.js",
+    "main": "electron/electron.js",
+    "build": {
+        "appId": "com.app4",
+        "files": [
+            "electron/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
     "scripts": {
         "web-dev": "parcel -p 3000 ./src/index.html",
-        "compile": "parcel watch --out-dir ./public/ --public-url ./ ./src/index.html",
-        "build": "parcel build ./src/index.html --no-minify",
-        "electron-dev": "electron ./public/electron.js --enable-logging",
+        "compile": "parcel watch --out-dir ./electron/ --public-url ./ ./src/index.js",
+        "build": "parcel build --out-dir ./electron/ --public-url ./ ./src/index.js",
+        "electron-build": "electron-builder --em.main=./electron/electron.js --mac -c electron-builder.yml",
+        "electron-build-all": "build --em.main=./electron/electron.js --win --ia32 --mac -c electron-builder.yml",
+        "electron-dev": "npm run build && electron ./electron/electron.js --enable-logging",
         "start": "concurrently \"npm run compile \" \"npm run electron-dev\" ",
+        "start-web": "concurrently \"npm run web-dev \" \"WEBBASED=true npm run electron-dev\" ",
         "export": "npm run build && build --em.main=public/electron.js --win --ia32 --mac -c electron-builder.yml"
     },
     "repository": {
@@ -40,11 +53,13 @@
         "electron": "^1.7.11",
         "electron-builder": "^19.55.2",
         "electron-packager": "^10.1.1",
-        "electron-reload": "^1.2.2",
         "nodemon": "^1.14.11",
         "parcel-bundler": "^1.5.0"
     },
     "dependencies": {
+        "electron-hot-loader": "^0.8.0",
+        "electron-is-dev": "^0.3.0",
+        "electron-reload": "^1.2.2",
         "react": "^16.2.0",
         "react-dom": "^16.2.0"
     }

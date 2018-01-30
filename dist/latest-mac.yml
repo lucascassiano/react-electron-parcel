@@ -1,0 +1,10 @@
+version: 0.1.0
+files:
+  - url: react_parcel_babel_generator-0.1.0-mac.zip
+    sha512: DAyEqB8QaMXX2C/UQEykGuEu/R2QlULkuEtqXH5xZX4vBO3LLe7i+ChXKwohfqyDiEf5NIPbU8N950Hmo9TZiQ==
+  - url: app-0.1.0.dmg
+    sha512: lAbIrt7WbkOt1kiEld6xKv7JLH7KzDrdb3D2tuBgvDrtou8Bjk9ikv81EjSyXn1odwLhL7hGXiIlEN9Lg/nH+A==
+    size: 49343308
+path: react_parcel_babel_generator-0.1.0-mac.zip
+sha512: DAyEqB8QaMXX2C/UQEykGuEu/R2QlULkuEtqXH5xZX4vBO3LLe7i+ChXKwohfqyDiEf5NIPbU8N950Hmo9TZiQ==
+releaseDate: '2018-01-30T04:27:38.643Z'

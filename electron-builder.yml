@@ -3,8 +3,6 @@ publish:
     token: 
 appId: com.app
 files:
-    - public/**/*
-    - node_modules/**/*"
-directories:
-    buildResources: assets
+    - electron/**/*
+    - node_modules/**/*
 productName: app
