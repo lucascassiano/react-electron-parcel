@@ -45,6 +45,6 @@
     <key>NSHumanReadableCopyright</key>
     <string>Copyright © 2018 lucascassiano</string>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"Em8k5PP1qVDZLoYMRScqytrLhC/VwSCru7vvPOg02GxA2abFD/UemD0/To2ZNTA6K54boeqwMz6Bcz56iJuWEQ==","electron.asar":"N8qMkArPe2Vz78otrpXE3aNxOfCVyD1sqLzLTkMM5HY6Di2N/zv+HQhnv0+XjE/PttdJYymWUm+D0oj39WbLiA=="}}</string>
+    <string>{"checksums":{"app.asar":"jvnEFn0ONio5QdX8jx47cUZTjd5zoOP2VL9J1nKOI5azuoBjVr9yanLgx7Cwj5Y/RaTh6ALXu0p22Y76WJDZ4w==","electron.asar":"N8qMkArPe2Vz78otrpXE3aNxOfCVyD1sqLzLTkMM5HY6Di2N/zv+HQhnv0+XjE/PttdJYymWUm+D0oj39WbLiA=="}}</string>
   </dict>
 </plist>

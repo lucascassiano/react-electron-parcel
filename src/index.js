@@ -1,8 +1,16 @@
+require('react-hot-loader/patch');
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom'
 import './index.css';
-import App from './App.js';
-//import registerServiceWorker from './registerServiceWorker';
+import { AppContainer } from 'react-hot-loader';
+import App from './App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-//registerServiceWorker();
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component/>
+    </AppContainer>,
+    document.getElementById('root'),
+  )
+}
+render(App);
