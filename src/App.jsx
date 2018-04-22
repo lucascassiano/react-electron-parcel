@@ -28,12 +28,12 @@ class App extends Component {
       <br/>
       <img className="App-logo-box" src={box}/>
         <header className="App-header">  
-          <h1 className="App-title">Welcome to React + Parcel </h1>
+          <h1 className="App-title">Welcome to React + Parcel :) !</h1>
           <h2>counter: {this.state.counter}</h2>
         </header>
 
         <p className="App-intro">
-          This is how this app is up and running:
+          This is how this app is up and running: 
         </p>
 
         <img src={pipeline}/>
