@@ -52,7 +52,7 @@
         "babel-preset-react-app": "^3.1.1",
         "concurrently": "^3.5.1",
         "electromon": "^1.0.9",
-        "electron": "^1.8.4",
+        "electron": "^2.0.2",
         "electron-builder": "^19.55.2",
         "electron-hot-loader": "^0.8.0",
         "electron-packager": "^10.1.1",
