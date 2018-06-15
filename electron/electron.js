@@ -9,10 +9,6 @@ const isDev = require("electron-is-dev");
 
 if (isDev && !process.env.WEBBASED) {
     require('electron-reload')(__dirname);
-    //const electronHot = require('electron-hot-loader');
-    //electronHot.install();
-    //electronHot.watchJsx(['./src/**/*.jsx']);
-    //electronHot.watchCss(['./src/**/*.css']);
 }
 
 if (isDev) {
@@ -30,21 +26,21 @@ if (isDev) {
 // Standard stuff
 console.log("hi");
 
-app.on('ready', function() {
-        let mainWindow = new BrowserWindow({ width: 800, height: 600, frame: true });
-        const dirname = __dirname || path.resolve(path.dirname(''));
-        const mainDir = path.basename(__dirname);
+app.on('ready', function () {
+    let mainWindow = new BrowserWindow({ width: 800, height: 600, frame: true });
+    const dirname = __dirname || path.resolve(path.dirname(''));
+    const mainDir = path.basename(__dirname);
 
-        if (process.env.WEBBASED) {
-            mainWindow.loadURL("http://localhost:1234");
-        } else {
-            console.log("dir name" + path.join(dirname, "../src/index.html"));
-            var sourceDir = `file://${path.join(dirname, "../src/index.html")}`;
-            var electronDir = `file://${path.join(dirname, "./index.html")}`
-            mainWindow.loadURL(electronDir);
-        }
-
-        process.env.NODE_ENV !== 'production' && mainWindow.openDevTools();
+    if (process.env.WEBBASED) {
+        mainWindow.loadURL("http://localhost:1234");
+    } else {
+        console.log("dir name" + path.join(dirname, "../src/index.html"));
+        var sourceDir = `file://${path.join(dirname, "../src/index.html")}`;
+        var electronDir = `file://${path.join(dirname, "./bundle/index.html")}`
+        mainWindow.loadURL(electronDir);
     }
+
+    process.env.NODE_ENV !== 'production' && mainWindow.openDevTools();
+}
 
 );
