@@ -12,15 +12,14 @@ if (isDev && !process.env.WEBBASED) {
 }
 
 if (isDev) {
-    const electronHot = require('electron-hot-loader');
-    electronHot.install();
-    electronHot.watchJsx(['../src/**/*.jsx']);
-    electronHot.watchCss(['../src/**/*.css']);
+   ///const electronHot = require('electron-hot-loader');
+    //electronHot.install();
+    //electronHot.watchJsx(['../src/**/*.jsx']);
+    //electronHot.watchCss(['../src/**/*.css']);
     //require('electron-reload')(__dirname);
     // require('electron-reload')(__dirname);
     console.log("DEVELOP ENV")
 }
-
 
 //require('./index.js');
 // Standard stuff
@@ -32,6 +31,7 @@ app.on('ready', function () {
     const mainDir = path.basename(__dirname);
 
     if (process.env.WEBBASED) {
+        console.log("RUNNING AS WEBBASED");
         mainWindow.loadURL("http://localhost:1234");
     } else {
         console.log("dir name" + path.join(dirname, "../src/index.html"));

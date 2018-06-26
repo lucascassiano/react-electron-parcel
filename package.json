@@ -14,15 +14,16 @@
         }
     },
     "scripts": {
+        "test": "concurrently \"npm run compile\" \"npm run electron-dev\" ",
         "dev": "npm run build && electromon ./electron/electron.js --enable-loggin\"",
-        "web": "parcel ./src/index.html",
+        "web": "parcel ./src/index.html ",
         "compile": "parcel watch --out-dir ./electron/bundle --public-url ./ ./src/index.html",
         "build": "parcel build --out-dir ./electron/bundle --public-url ./ ./src/index.js",
         "electron-build": "electron-builder --em.main=./electron/electron.js --mac -c electron-builder.yml",
         "electron-build-all": "build --em.main=./electron/electron.js --win --ia32 --mac -c electron-builder.yml",
         "electron-dev": "npm run build && electron ./electron/electron.js --enable-logging",
         "start": "concurrently \"npm run compile\" \"npm run electron-dev\" ",
-        "start-web": "concurrently \"npm run web-dev \" \"WEBBASED=true npm run electron-dev\" ",
+        "start-web": "WEBBASED=true concurrently \"npm run web \" \"WEBBASED=true npm run electron-dev\" ",
         "export": "npm run build && build --em.main=public/electron.js --win --ia32 --mac -c electron-builder.yml"
     },
     "repository": {

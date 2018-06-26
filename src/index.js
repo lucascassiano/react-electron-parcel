@@ -4,15 +4,17 @@ import * as ReactDOM from 'react-dom'
 import './index.css';
 import { AppContainer } from 'react-hot-loader';
 import App from './App.jsx';
+//import { hot } from 'react-hot-loader';
 
 // We can now require our jsx files, they will be compiled for us 
 const render = Component => {
-  ReactDOM.render(<AppContainer><Component /></AppContainer>,
+  ReactDOM.render(<Component/>,
     document.getElementById('root'),
   )
 }
 
-render(App);
 
+render(App);
+/*
 if (module.hot)
-  module.hot.accept(render(App));
+  module.hot.accept(render(App));*/
