@@ -7,12 +7,12 @@ For now you can use this project as a boilerplate. If you want to contribute, th
 
 ## Clone the Quick Start repository
 ```
-git clone https://github.com/lucascassiano/react_parcel_babel_generator/
+git clone https://github.com/lucascassiano/react-electron-parcel/
 ```
 
 ## Go into the repository
 ```
-cd {repository directory}
+cd react-electron-parcel
 ```
 
 ## Install the dependencies and run
@@ -24,7 +24,7 @@ npm install && npm start
 ```
 npm run web-dev
 ```
-open a browser at http://localhost:3000 (port is fixed in 3000)
+open a browser at http://localhost:1234 (port is fixed in 1234)
 
 ## Desktop app building
 ```
