@@ -1,23 +1,17 @@
-<html>
+<html lang="en">
 
 <head>
-    <title>Electron Parcel React</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>JavaScript App</title>
 </head>
 
-<body>
-    <div id="root"></div>
-    <script>
-        if (process.env.WEBBASE) {
-            const electronHot = require('electron-hot-loader');
-            electronHot.install();
-            //electronHot.watchJsx(['./*.jsx']);
-            //electronHot.watchCss(['./*.css']);
-        }
-        // We can now require our jsx files, they will be compiled for us
-        //require('./index.js');
-    </script>
+<body style="overflow: hidden; background-color: rgba(0,0,0,0); margin: 0">
+  <div id="app"></div>
 
-    <script src="index.js"></script>
+  <script>
+    require("./index.js");
+  </script>
 </body>
+
 
 </html>

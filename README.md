@@ -1,28 +1,40 @@
 # react-electron-parcel
+Simple Barebones app running React, Electron and Parcel in a simple but highly efficient way
 
-## Clone the Quick-Start repository
+## install
 ```
 git clone https://github.com/lucascassiano/react-electron-parcel/
 ```
-
-## Go into the repository
 ```
 cd react-electron-parcel
 ```
+```
+npm start
+```
+## App structure
+```javascript
+engine
+    index.js
+    sys
+        /*system modules*/
+    app
+        /*compiled front-end files*/
+        App.js
+        index.html
+src
+    /*ES6 ~uncompiled~ files*/
+    App.js //Main React Component
+    index.html //HTML entry
+    index.js //react-dom renderer
+```
+## React Components *hot reload*
+```
+react-hot-loader/babel
+```
 
-## Install the dependencies and run
-```
-npm install && npm start
-```
+## Compiler
+This boilerplate uses *babel-register* to compile from ES6 to ES5.
 
-## Web development
-```
-npm run web-dev
-```
-open a browser at http://localhost:1234 (port is fixed in 1234)
 
-## Desktop app building
-```
-npm run electron-build
-```
-check the folder /dist/
+## :rotating_light:
+
