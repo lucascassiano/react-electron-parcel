@@ -1,4 +1,4 @@
-process.env.HMR_PORT=61122;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=62189;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -233,6 +233,12 @@ require('./app.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(function () {
+    var enterModule = require('react-hot-loader').enterModule;
+
+    enterModule && enterModule(module);
+})();
+
 var App = function (_Component) {
     (0, _inherits3.default)(App, _Component);
 
@@ -289,10 +295,9 @@ var App = function (_Component) {
                         },
                         __self: this
                     },
-                    ' ',
                     _react2.default.createElement('img', { src: _github2.default, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 22
                         },
                         __self: this
                     }),
@@ -300,11 +305,36 @@ var App = function (_Component) {
                 )
             );
         }
+    }, {
+        key: '__reactstandin__regenerateByEval',
+        // @ts-ignore
+        value: function __reactstandin__regenerateByEval(key, code) {
+            // @ts-ignore
+            this[key] = eval(code);
+        }
     }]);
     return App;
 }(_react.Component);
 
-exports.default = App;
+var _default = App;
+exports.default = _default;
+;
+
+(function () {
+    var reactHotLoader = require('react-hot-loader').default;
+
+    var leaveModule = require('react-hot-loader').leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(App, 'App', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/App.js');
+    reactHotLoader.register(_default, 'default', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/App.js');
+    leaveModule(module);
+})();
+
+;
 },{"./icons/logo.svg":"icons/logo.svg","./icons/github.svg":"icons/github.svg","./app.css":"app.css"}],"index.css":[function(require,module,exports) {
 'use strict';
 
@@ -334,6 +364,12 @@ require('./index.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(function () {
+    var enterModule = require('react-hot-loader').enterModule;
+
+    enterModule && enterModule(module);
+})();
+
 var render = function render() {
     _reactDom2.default.render(_react2.default.createElement(
         _reactHotLoader.AppContainer,
@@ -360,6 +396,22 @@ if (typeof window !== 'undefined') {
 if (module.hot) {
     module.hot.accept(render);
 }
+;
+
+(function () {
+    var reactHotLoader = require('react-hot-loader').default;
+
+    var leaveModule = require('react-hot-loader').leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(render, 'render', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/index.js');
+    leaveModule(module);
+})();
+
+;
 },{"./App.js":"App.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var OVERLAY_ID = '__parcel__error__overlay__';
 

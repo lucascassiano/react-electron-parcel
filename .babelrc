@@ -4,6 +4,7 @@
         "react-app"
     ],
     "plugins": [
-        "transform-runtime"
+        "transform-runtime",
+        "react-hot-loader/babel"
     ]
 }

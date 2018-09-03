@@ -18,7 +18,9 @@ export default class App extends Component {
             <div className="content">
                 <img className="logo" src={logo} />
                 <h1>React + Electron</h1>
-                <button onClick={this.onClick}> <img src={github} /> Fork me on Github</button>
+                <button onClick={this.onClick}>
+                    <img src={github} /> Fork me on Github
+                </button>
             </div >
         );
     }

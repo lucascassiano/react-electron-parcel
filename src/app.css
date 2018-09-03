@@ -12,6 +12,8 @@ button{
     font-size: 14pt;
     padding-left:30px;
     padding-right:30px;
+    overflow: hidden;
+    display: inline;
 }
 
 button:hover{
