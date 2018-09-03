@@ -1,5 +1,13 @@
 'use strict';
 
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
 var _electron = require('electron');
 
 var _SerialPorts = require('./sys/SerialPorts');
@@ -32,23 +40,40 @@ if (enableReload && isDev) {
     console.log('Running in production');
 }
 
-var createWindow = async function createWindow() {
-    mainWindow = new _electron.BrowserWindow({
-        width: 800,
-        height: 600
-    });
+var createWindow = function () {
+    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        mainWindow = new _electron.BrowserWindow({
+                            width: 800,
+                            height: 600
+                        });
 
-    mainWindow.loadURL('file://' + appDirectory + '/index.html');
+                        mainWindow.loadURL('file://' + appDirectory + '/index.html');
 
-    if (isDev) {
-        // await installExtension(REACT_DEVELOPER_TOOLS);
-        mainWindow.webContents.openDevTools();
-    }
+                        if (isDev) {
+                            // await installExtension(REACT_DEVELOPER_TOOLS);
+                            mainWindow.webContents.openDevTools();
+                        }
 
-    mainWindow.on('closed', function () {
-        mainWindow = null;
-    });
-};
+                        mainWindow.on('closed', function () {
+                            mainWindow = null;
+                        });
+
+                    case 4:
+                    case 'end':
+                        return _context.stop();
+                }
+            }
+        }, _callee, undefined);
+    }));
+
+    return function createWindow() {
+        return _ref.apply(this, arguments);
+    };
+}();
 
 _electron.app.on('ready', createWindow);
 

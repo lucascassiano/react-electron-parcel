@@ -1,66 +1,188 @@
-"use strict";
+'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-process.env.HMR_PORT = 0;process.env.HMR_HOSTNAME = "localhost";parcelRequire = function (e, r, n, t) {
-  var i = "function" == typeof parcelRequire && parcelRequire,
-      o = "function" == typeof require && require;function u(n, t) {
-    if (!r[n]) {
-      if (!e[n]) {
-        var f = "function" == typeof parcelRequire && parcelRequire;if (!t && f) return f(n, !0);if (i) return i(n, !0);if (o && "string" == typeof n) return o(n);var c = new Error("Cannot find module '" + n + "'");throw c.code = "MODULE_NOT_FOUND", c;
-      }p.resolve = function (r) {
-        return e[n][1][r] || r;
-      };var l = r[n] = new u.Module(n);e[n][0].call(l.exports, p, l, l.exports, this);
-    }return r[n].exports;function p(e) {
-      return u(p.resolve(e));
+process.env.HMR_PORT = 0;process.env.HMR_HOSTNAME = "localhost"; // modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+// eslint-disable-next-line no-global-assign
+parcelRequire = function (modules, cache, entry, globalName) {
+  // Save the require from previous bundle to this closure if any
+  var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
+  var nodeRequire = typeof require === 'function' && require;
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire = typeof parcelRequire === 'function' && parcelRequire;
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error('Cannot find module \'' + name + '\'');
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+
+      var module = cache[name] = new newRequire.Module(name);
+
+      modules[name][0].call(module.exports, localRequire, module, module.exports, this);
     }
-  }u.isParcelRequire = !0, u.Module = function (e) {
-    this.id = e, this.bundle = u, this.exports = {};
-  }, u.modules = e, u.cache = r, u.parent = i, u.register = function (r, n) {
-    e[r] = [function (e, r) {
-      r.exports = n;
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x) {
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function (id, exports) {
+    modules[id] = [function (require, module) {
+      module.exports = exports;
     }, {}];
-  };for (var f = 0; f < n.length; f++) {
-    u(n[f]);
-  }if (n.length) {
-    var c = u(n[n.length - 1]);"object" == (typeof exports === "undefined" ? "undefined" : _typeof(exports)) && "undefined" != typeof module ? module.exports = c : "function" == typeof define && define.amd ? define(function () {
-      return c;
-    }) : t && (this[t] = c);
-  }return u;
+  };
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (entry.length) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(entry[entry.length - 1]);
+
+    // CommonJS
+    if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === "object" && typeof module !== "undefined") {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+      define(function () {
+        return mainExports;
+      });
+
+      // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+
+  // Override the current require with this new one
+  return newRequire;
 }({ "NyPj": [function (require, module, exports) {
     "use strict";
-    module.exports = "logo.91054b55.svg";
+
+    module.exports = "logo.dde1e2ea.svg";
   }, {}], "lY9v": [function (require, module, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: !0 });var e = function () {
-      function e(e, t) {
-        for (var r = 0; r < t.length; r++) {
-          var n = t[r];n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+
+    var _createClass = function () {
+      function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+          var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
         }
-      }return function (t, r, n) {
-        return r && e(t.prototype, r), n && e(t, n), t;
+      }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
       };
-    }(),
-        t = require("react"),
-        r = c(t),
-        n = require("react-dom"),
-        o = c(n),
-        u = require("react-hot-loader"),
-        i = require("./icons/logo.svg"),
-        a = c(i);function c(e) {
-      return e && e.__esModule ? e : { default: e };
-    }function l(e, t) {
-      if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-    }function f(e, t) {
-      if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return !t || "object" != (typeof t === "undefined" ? "undefined" : _typeof(t)) && "function" != typeof t ? e : t;
-    }function p(e, t) {
-      if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + (typeof t === "undefined" ? "undefined" : _typeof(t)));e.prototype = Object.create(t && t.prototype, { constructor: { value: e, enumerable: !1, writable: !0, configurable: !0 } }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t);
-    }var s = function (n) {
-      function o() {
-        return l(this, o), f(this, (o.__proto__ || Object.getPrototypeOf(o)).apply(this, arguments));
-      }return p(o, t.Component), e(o, [{ key: "render", value: function value() {
-          return r.default.createElement("div", null, "Hello from React ", r.default.createElement("img", { src: a.default }));
-        } }]), o;
-    }();exports.default = s;
+    }();
+
+    var _react = require('react');
+
+    var _react2 = _interopRequireDefault(_react);
+
+    var _reactDom = require('react-dom');
+
+    var _reactDom2 = _interopRequireDefault(_reactDom);
+
+    var _reactHotLoader = require('react-hot-loader');
+
+    var _logo = require('./icons/logo.svg');
+
+    var _logo2 = _interopRequireDefault(_logo);
+
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : { default: obj };
+    }
+
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
+    }
+
+    function _possibleConstructorReturn(self, call) {
+      if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      }return call && ((typeof call === 'undefined' ? 'undefined' : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+    }
+
+    function _inherits(subClass, superClass) {
+      if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === 'undefined' ? 'undefined' : _typeof(superClass)));
+      }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    }
+
+    var App = function (_Component) {
+      _inherits(App, _Component);
+
+      function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+      }
+
+      _createClass(App, [{
+        key: 'render',
+        value: function render() {
+          return _react2.default.createElement('div', null, 'Hello from React ', _react2.default.createElement('img', { src: _logo2.default }), _react2.default.createElement('div', { className: 'button-styled' }, 'BUTTON'));
+        }
+      }]);
+
+      return App;
+    }(_react.Component);
+
+    exports.default = App;
   }, { "./icons/logo.svg": "NyPj" }] }, {}, ["lY9v"], null);
 //# sourceMappingURL=App.map
