@@ -5,7 +5,7 @@
   "main": "./build/index.js",
   "scripts": {
     "prestart": "npm run parcel:build",
-    "parcel:build": "rimraf ./src/app &&  parcel build ./src/index.html --target=electron --out-dir ./engine/app --public-url ./ ",
+    "parcel:build": "rimraf ./engine/app &&  parcel build ./src/index.html --target=electron --out-dir ./engine/app --public-url ./ ",
     "parcel:start": "parcel ./src/index.html --target=electron --out-dir ./engine/app --public-url ./ ",
     "electron:start": "NODE_ENV=development electron -r babel-register ./engine/",
     "electron:build": "NODE_ENV=production babel ./engine/ --out-dir build",

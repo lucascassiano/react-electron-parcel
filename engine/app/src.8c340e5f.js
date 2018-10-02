@@ -1,4 +1,4 @@
-process.env.HMR_PORT=62189;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=64120;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -106,11 +106,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"icons/logo.svg":[function(require,module,exports) {
 "use strict";
 
-module.exports = "logo.c7000708.svg";
+module.exports = "logo.87f26200.svg";
 },{}],"icons/github.svg":[function(require,module,exports) {
 "use strict";
 
-module.exports = "github.4a03fb3b.svg";
+module.exports = "github.406b63af.svg";
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
@@ -207,7 +207,7 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _jsxFileName = '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/App.js';
+var _jsxFileName = '/Users/lucascassiano/Documents/GitHub/react-electron-parcel/src/App.js';
 
 var _react = require('react');
 
@@ -329,8 +329,8 @@ exports.default = _default;
         return;
     }
 
-    reactHotLoader.register(App, 'App', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/App.js');
-    reactHotLoader.register(_default, 'default', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/App.js');
+    reactHotLoader.register(App, 'App', '/Users/lucascassiano/Documents/GitHub/react-electron-parcel/src/App.js');
+    reactHotLoader.register(_default, 'default', '/Users/lucascassiano/Documents/GitHub/react-electron-parcel/src/App.js');
     leaveModule(module);
 })();
 
@@ -344,7 +344,7 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
-var _jsxFileName = '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/index.js';
+var _jsxFileName = '/Users/lucascassiano/Documents/GitHub/react-electron-parcel/src/index.js';
 
 var _react = require('react');
 
@@ -407,7 +407,7 @@ if (module.hot) {
         return;
     }
 
-    reactHotLoader.register(render, 'render', '/Users/cassiano/Documents/GitHub/react-electron-parcel/src/index.js');
+    reactHotLoader.register(render, 'render', '/Users/lucascassiano/Documents/GitHub/react-electron-parcel/src/index.js');
     leaveModule(module);
 })();
 
@@ -591,4 +591,4 @@ function hmrAccept(bundle, id) {
 }
 
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=src.5ffdffe1.map
+//# sourceMappingURL=src.8c340e5f.map
